@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>zezun | VIP1</title>
+  <meta name="title" content="zezun | VIP1">
+  <meta name="description" content="Get your perfect website for only $12 per month">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./ata-zezun.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/require.css">
+  <link rel="stylesheet" href="./assets/css/pages/service.css">
+
+</head>
+
+<body>
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preloader" data-preloader>
+    <div class="preloader-circle"></div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="./index.html" class="logo">
+        <img src="./zezun.png" width="151" height="28" alt="Annie home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="./index.html" class="label-lg navbar-link has-after">Home</a>
+          </li>
+
+         
+
+          <li class="navbar-item">
+            <a href="./portfolio.html" class="label-lg navbar-link has-after">Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./contact.html" class="label-lg navbar-link has-after">Contact</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./login.html" class="label-lg navbar-link has-after">Login</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="./Terms & Agreement.html" class="label-lg navbar-link has-after">Terms & Agreement</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <a href="./contact.html" class="btn btn-primary">Contact Now</a>
+
+      <button class="nav-toggle-btn" aria-label="menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    .element {
+      height: 15vh;
+     
+    }
+  </style>
+</head>
+<body>
+  <div class="element"></div>
+  
+
+
+
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 26px;
+    }
+     h5 {
+      text-align: center;
+      font-size: 36px;
+    }
+    </style>
+     <h1>Submit an application to build your site
+     </h1>
+     
+
+
+     <style>
+      .element-2 {
+        height: 3vh;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element-2"></div>
+
+
+       <!-- 
+        - #Contact...........
+      -->
+
+
+  <head>
+    <title>Contact Form</title>
+    <style>
+    
+      
+      .container-5 {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      h3, h5 {
+        margin: 0 0 10px;
+        font-size: 20px;
+      }
+      
+      input, textarea {
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border: 1px solid #c0c0c0;
+        border-radius: 4px;
+        outline: none;
+      }
+      
+      textarea {
+        resize: vertical;
+      }
+      
+      button[type="submit"] {
+        background-color: #5271ff;
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      button[type="submit"]:hover {
+               background-color: #000;
+             }
+      
+      #msg {
+        color: #353535;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-5">
+      <form name="submit-to-google-sheet">
+           <h3>Enter your information so that we can identify you
+           </h3>
+           <input type ="text" name="Name" placeholder="Your Name" required >
+           <input type ="email" name="Email" placeholder="Email Id" required>
+           <input type ="text" name="Number" placeholder="Phone no">
+           <button type ="submit">Send</button>
+         <span id="msg"></span>
+          </form> 
+   </div>
+      
+   <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzwS4YkRPI29aaNzoQYxmRHAN1nK1IamtHD6cg-wB77ykBbHr8vqf6h-OvaC4rWHvTP/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg");
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {  
+          msg.innerHTML = "Your information has been sent successfully"
+          setTimeout(function(){  
+              msg.innerHTML = ""
+             },5000)
+             form.reset()  
+             })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+
+
+
+
+  
+<style>
+  .element-3 {
+    height: 3vh;
+   
+  }
+</style>
+</head>
+<body>
+<div class="element-3"></div>
+
+
+<style>
+   
+     p {
+      text-align: center;
+      font-size: 16px;
+    }
+    h5 {
+      text-align: center;
+      font-size: 26px;
+    }
+    </style>
+    
+
+<P>You can pay through PayPal or the digital currency USDT (TRC 20) </P>
+<P>Then contact us via WhatsApp to start building your website </P>
+  <P> If these payment options are not available to you, tell us on WhatsApp</P>
+<h5>The plan price is $12 per month</h5>
+
+
+
+
+
+
+
+<style>
+  .element-2 {
+    height: 3vh;
+   
+  }
+</style>
+</head>
+<body>
+<div class="element-2"></div>
+
+
+
+    <title>Copy Text Example</title>
+
+            <style>
+              
+              .container-2 {
+                display: flex;
+                align-items: center;
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+              }
+              
+          
+          
+              .logo {
+                  width: 40px;
+                  height: 40px;
+                  margin-right: 10px;
+                }
+              
+                .logo1 {
+                  width: 60px;
+                  height: 60px;
+                  margin-right: 10px;
+                }
+          
+              .input-wrapper {
+                flex: 1;
+                margin-right: 10px;
+              }
+              
+              input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                outline: none;
+              }
+              
+              .copy-button {
+                background-color: #5271ff;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 4px;
+              }
+              .copy-button:hover {
+               background-color: #000;
+             }
+              
+              .copy-text {
+                color: #666666;
+                font-size: 14px;
+                margin-top: 10px;
+              }
+              
+              .title {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 24px;
+              }
+            </style>
+          </head>
+          <body>
+            <h1 class="title"></h1>
+
+            <div class="container-2">
+              <img src="assets/images/paypal.png" alt="Logo" class="logo">
+              <div class="input-wrapper">
+                <input type="text" id="text-to-copy1" value="@ahmet1977zx" readonly>
+              </div>
+              <button class="copy-button" onclick="copyText(1)">Copy</button>
+            </div>
+            <p id="copied-text1" class="copy-text"></p>
+            
+            <div class="container-2">
+              <img src="assets/images/Tron__TRC-20.png" alt="Logo" class="logo1">
+              <div class="input-wrapper">
+                <input type="text" id="text-to-copy2" value="TC3pJSdSmF8fjCoFER1RV9VNT7w8ARh16Q" readonly>
+              </div>
+              <button class="copy-button" onclick="copyText(2)">Copy</button>
+            </div>
+            <p id="copied-text2" class="copy-text"></p>
+          
+            <script>
+              function copyText(num) {
+                var copyText = document.getElementById("text-to-copy" + num);
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                
+                var copiedText = document.getElementById("copied-text" + num);
+                copiedText.textContent = "Copied!";
+                setTimeout(function() {
+                  copiedText.textContent = "";
+                }, 2000);
+              }
+            </script>
+
+           
+
+
+
+
+
+
+
+
+
+
+
+         
+  <title>Contact Us</title>
+  <style>
+  body-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .whatsapp-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #5271ff;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #14aa00;
+  }
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body-1>
+<a href="https://wa.me/+905510853802" target="_blank" class="whatsapp-button"><i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>   Contact Us via WhatsApp</a>
+</body-1>
+           
+
+          
+         
+
+
+
+<style>
+  .element-1 {
+    height: 10vh;
+   
+  }
+</style>
+</head>
+<body>
+<div class="element-1"></div>
+  <!-- 
+    - #'ilk'
+  -->
+ 
+
+          
+  <title>Main Title and Subtitle</title>
+  <style>
+   
+    
+    .title {
+      color: #5271ff;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-left: 15px;
+
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 20px;
+      padding-left: 15px;
+
+    }
+  </style>
+
+  <h1.5 class="title">With our website creation service</h1.5>
+  <h2 class="subtitle">we offer an array of valuable features to help you establish and maintain your online presence effortlessly. 
+    Take a look at the benefits we provide: 
+  </h2>
+
+  <h1.5 class="title"> Location Data Space:</h1.5>
+  <h2 class="subtitle">      
+    We understand the importance of accurate location data for businesses. With our expertise, we ensure that your website effectively integrates location-based information, allowing visitors to easily find and engage with your business in the real world.
+  </h2>
+            
+  <h1.5 class="title">     private domain:</h1.5>
+  <h2 class="subtitle">    
+    A website's domain is its unique online address that users enter in their browsers to access the site. It consists of two parts: the domain name (e.g., "example" in "example.com") and the domain extension. The domain name is chosen by the owner and represents the website's identity.
+  </h2>
+     
+  <h1.5 class="title">  SSL Certificate:   </h1.5>
+  <h2 class="subtitle">     
+    Security is a top priority for us. That's why we provide SSL certificates for your website. An SSL certificate encrypts data exchanged between your site and its visitors, safeguarding sensitive information and giving your customers peace of mind while browsing your pages.
+  </h2>
+
+  <h1.5 class="title">   Site Administration:    </h1.5>
+  <h2 class="subtitle">    
+    We offer comprehensive site administration services, taking care of the technical aspects so you can focus on your core business. Our team will handle tasks such as website updates, backups, security monitoring, and performance optimization, ensuring that your site runs smoothly and efficiently.
+  </h2>
+
+  <h1.5 class="title">       </h1.5>
+  <h2 class="subtitle">  With our website creation service, you can expect a professional, user-friendly website that incorporates location data, prioritizes security with an SSL certificate, and relieves you of the burden of site administration. Let us help you establish a strong online presence and drive success for your business.   </h2>
+          
+  <!-- 
+    - #nex
+  -->
+
+    
+
+            
+
+           
+
+
+     
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+      
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+     
+
+      </ul>
+
+      <p class="text-center">&copy; 2022 copyright all right reserved</p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
